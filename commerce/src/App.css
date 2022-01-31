@@ -1,0 +1,121 @@
+
+/* ---NavBar---- */
+.App{
+    background-color: #000000;
+    display:flex;
+    justify-content: space-between;
+    min-height: 7vh;
+    align-items: center;
+ 
+}
+/* .menuitem{
+    margin-top: 0.5rem;
+} */
+.toggle{
+    background-color: #FFCDDD;
+    display: flex;
+    justify-content: center;
+} 
+.nav-item{
+    cursor: pointer;
+}
+.nav-items{
+    margin-right:1rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.shop{
+    height: 2rem;
+    width: 5rem;
+    color:#FFC600 ;
+}
+.badgeCont{
+    position: relative;
+}
+.badge{
+    position: absolute;
+    right:1.5rem ;
+    color:#000000 ;
+ 
+}
+.nav-items:focus{
+    border-radius: 5rem;
+    background-color: #FFC600; 
+    transition: 0.5s;
+    
+}
+.form-control{
+    width: 34vw;
+    height: vh;
+}
+
+/* ---Home--- */
+.carousel{
+    width: 100vw;
+    height: 28vh;
+    object-fit: cover;
+    object-position: 1% 5%;
+}
+.card{
+    max-width:25rem;
+    height: 37rem;
+    margin: 0.5rem;
+    padding: 1.5rem;
+    box-shadow:0.5rem 0.5rem 0.5rem rgb(235, 225, 208);
+    cursor: pointer;
+
+}
+.cardimage{
+    width: fit-content;
+    height: 19rem;
+    object-fit: fill;
+}
+.cardprice{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 900;
+}
+.addtocard{
+    position: absolute;
+    left: 35%;
+    bottom: 3%;
+}
+.toasty{
+width: 100vw;
+
+}
+/* -----ShoppedPage----- 
+*/
+.shoppedcard{
+    max-width:95vw;
+    max-height:2rem ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    position: relative;
+}
+.shoppedcardimage{
+    width:5rem;
+    height: 5rem;
+    position: absolute;
+    left: 0;
+}
+.shoppedcardtext{
+    position: absolute;
+    left: 10vw;
+    width: 50vw;
+
+}
+
+/* @media screen and (max-width: 700px) {
+    .App{
+        
+    }
+
+    
+} */
