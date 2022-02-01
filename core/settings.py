@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-_fsgjc&h=5lk9=^gl0_%*pl%pp8tse^by#josorbehj&_)b8@o
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["restframeworkecommerce.herokuapp.com", "127.0.0.1"]
 
