@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CgShoppingCart } from 'react-icons/cg';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { searchProduct } from '../redux/actions/shopActions';
+import { fetchAllData, searchProduct } from '../redux/actions/shopActions';
 
 const Navbar = () => {
   const [value, setValue] = useState()
@@ -16,12 +16,16 @@ const Navbar = () => {
     dispatch(searchProduct(value))
     setValue("")
   }
+  const handleRefresh = () =>{
+    dispatch(fetchAllData())
+    navigate("/")
+  }
 
   return (
     <div >
       <NavBar className="App" variant="dark" sticky="top" expand="xl" collapseOnSelect>
         <Container>
-        <NavBar.Brand className="nav-item" onClick={() => navigate("/")} >
+        <NavBar.Brand className="nav-item" onClick={() => handleRefresh()} >
          e-Commerce Project
         </NavBar.Brand>
         <NavBar.Toggle className="toggle" />
