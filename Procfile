@@ -1,1 +1,1 @@
-web: waitress-serve --listen=*:8000 core.wsgi:application
+web: python manage.py collectstatic --noinput; waitress-serve --listen=*:8000 core.wsgi:application
