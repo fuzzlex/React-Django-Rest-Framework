@@ -63,11 +63,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
-FRONTEND_DIR = BASE_DIR.parent / 'commerce'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ FRONTEND_DIR  / 'build'],
+        'DIRS': [ BASE_DIR  / 'commerce/build'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
