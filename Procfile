@@ -1,2 +1,3 @@
-worker: python manage.py collectstatic --noinput
-web : waitress-serve --listen=*:8000 core.wsgi:application
+web: gunicorn core.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
