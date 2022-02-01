@@ -9,5 +9,5 @@ urlpatterns = [
     # path('', home , name='home')
     path('api/', include('api.urls')),
     # path('auth/', obtain_auth_token),
-    path('', TemplateView.as_view(template_name='index.html'))
+    path(r'', TemplateView.as_view(template_name='index.html'))
 ]
