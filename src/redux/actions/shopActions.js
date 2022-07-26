@@ -9,7 +9,7 @@ export const setShopActionFetch = (payload) => ({ type: FETCH_ALL, state:payload
 
 export const fetchAllData = () =>{
   return async dispatch =>{
-     await fetch("http://127.0.0.1:8000/api/article/")
+     await fetch("http://efalcollection.herokuapp.com/api/article/")
     .then(res => res.json())
     .then(data => dispatch(setShopActionFetch(data)))
     
@@ -21,7 +21,7 @@ export const fetchAllData = () =>{
 
 export const filterCategory = category => {
   return async  dispatch => {
-    const response = await fetch("http://127.0.0.1:8000/api/article/")
+    const response = await fetch("http://efalcollection.herokuapp.com/api/article/")
     .then(res => res.json())
     .then(data => data)
     const newData = response?.filter(product => {
@@ -33,7 +33,7 @@ export const filterCategory = category => {
 
 export const addCard = (id) => {
   return async dispatch => {
-    const response = await fetch("http://127.0.0.1:8000/api/article/")
+    const response = await fetch("http://efalcollection.herokuapp.com/api/article/")
     .then(res => res.json())
     .then(data => data)
     const newData = response?.filter(item=>{
@@ -47,7 +47,7 @@ export const addCard = (id) => {
 
 export const searchProduct = (value) => {
   return async dispatch => {
-    const response = await fetch("http://127.0.0.1:8000/api/article/")
+    const response = await fetch("http://efalcollection.herokuapp.com/api/article/")
     .then(res => res.json())
     .then(data => data)
     const newData = response?.filter(item=>{

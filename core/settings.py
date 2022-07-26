@@ -36,7 +36,7 @@ DEBUG = False
 # SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 
-ALLOWED_HOSTS = ["restframeworkecommerce.herokuapp.com", "127.0.0.1","localhost", "http://localhost:8000/"]
+ALLOWED_HOSTS = ["efalcollection.herokuapp.com", "127.0.0.1","localhost", "http://localhost:8000/"]
 
 
 # Application definition
