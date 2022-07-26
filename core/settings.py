@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 
 # SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -31,6 +35,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
+
 
 ALLOWED_HOSTS = ["restframeworkecommerce.herokuapp.com", "127.0.0.1","localhost", "http://localhost:8000/"]
 
