@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+import django_heroku
+
 
 # SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -66,7 +68,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR  / 'commerce/build' ],
+        'DIRS': [ BASE_DIR  / 'build' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,16 +130,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[
-     os.path.join(BASE_DIR, 'commerce/build/static')
+     os.path.join(BASE_DIR, 'build/static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR,"build", "staticfiles")
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000', "http://127.0.0.1:8000" ,"http://127.0.0.1:3001" , "https://adrsaha.herokuapp.com",'http://localhost:3001'
+    'http://localhost:8000', "http://127.0.0.1:8000" ,"http://127.0.0.1:3001" ,"https://efalcollection.herokuapp.com",'http://localhost:3001'
 )
 
 CORS_ALLOW_ALL_ORIGINS: True
+
+django_heroku.settings(locals())
