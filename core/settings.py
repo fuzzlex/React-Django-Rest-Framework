@@ -13,12 +13,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
+from dotenv import load_dotenv
+load_dotenv()
 
 
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
 
+
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +45,7 @@ ALLOWED_HOSTS = ["efalcollection.herokuapp.com", "127.0.0.1","localhost", "http:
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,15 +60,15 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-  "django.middleware.security.SecurityMiddleware",
-  "whitenoise.middleware.WhiteNoiseMiddleware",
-      "corsheaders.middleware.CorsMiddleware",
-  "django.contrib.sessions.middleware.SessionMiddleware",
-  "django.middleware.common.CommonMiddleware",
-  "django.middleware.csrf.CsrfViewMiddleware",
-  "django.contrib.auth.middleware.AuthenticationMiddleware",
-  "django.contrib.messages.middleware.MessageMiddleware",
-  "django.middleware.clickjacking.XFrameOptionsMiddleware",
+          'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+     "whitenoise.middleware.WhiteNoiseMiddleware",
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -147,6 +151,6 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8000', "http://127.0.0.1:8000" ,"http://127.0.0.1:3001" ,"https://efalcollection.herokuapp.com",'http://localhost:3001'
 )
 
-CORS_ALLOW_ALL_ORIGINS: True
+CORS_ORIGIN_ALLOW_ALL = False
 
 django_heroku.settings(locals())
