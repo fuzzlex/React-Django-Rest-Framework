@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-_fsgjc&h=5lk9=^gl0_%*pl%pp8tse^by#josorbehj&_)b8@o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["restframeworkecommerce.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["restframeworkecommerce.herokuapp.com", "127.0.0.1","localhost", "http://localhost:8000/"]
 
 
 # Application definition
@@ -136,5 +136,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8000', "http://127.0.0.1:8000" ,"http://127.0.0.1:3001" , "https://adrsaha.herokuapp.com",'http://localhost:3001'
+)
 
 CORS_ALLOW_ALL_ORIGINS: True
